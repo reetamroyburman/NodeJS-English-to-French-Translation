@@ -1,0 +1,16 @@
+{
+  "name": "nodejs-english-to-french-translation",
+  "version": "1.0.0",
+  "description": "",
+  "main": "app.js",
+  "scripts": {
+    "start": "nodemon app.js"
+  },
+  "author": "",
+  "license": "ISC",
+  "dependencies": {
+    "dotenv": "^16.4.5",
+    "express": "^4.18.2",
+    "translatte": "^3.0.1"
+  }
+}
