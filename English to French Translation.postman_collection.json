@@ -9,12 +9,22 @@
 		{
 			"name": "English-French",
 			"request": {
-				"method": "GET",
-				"header": []
+				"method": "POST",
+				"header": [],
+				"body": {
+					"mode": "raw",
+					"raw": "{\r\n    \"text\":\"Hello, how are you?\"\r\n}",
+					"options": {
+						"raw": {
+							"language": "json"
+						}
+					}
+				},
+				"url": "http://localhost:4000/api/translate/eng-fr"
 			},
 			"response": [
 				{
-					"name": "New Request",
+					"name": "success response",
 					"originalRequest": {
 						"method": "POST",
 						"header": [],
@@ -64,6 +74,58 @@
 					],
 					"cookie": [],
 					"body": "{\n    \"translation\": \"Bonjour comment allez-vous?\"\n}"
+				},
+				{
+					"name": "error response",
+					"originalRequest": {
+						"method": "POST",
+						"header": [],
+						"body": {
+							"mode": "raw",
+							"raw": "{\r\n    \"text\":\"\"\r\n}",
+							"options": {
+								"raw": {
+									"language": "json"
+								}
+							}
+						},
+						"url": "http://localhost:4000/api/translate/eng-fr"
+					},
+					"status": "Bad Request",
+					"code": 400,
+					"_postman_previewlanguage": "html",
+					"header": [
+						{
+							"key": "X-Powered-By",
+							"value": "Express"
+						},
+						{
+							"key": "Content-Type",
+							"value": "text/html; charset=utf-8"
+						},
+						{
+							"key": "Content-Length",
+							"value": "16"
+						},
+						{
+							"key": "ETag",
+							"value": "W/\"10-MWsP2UEBgPWwTuqYNfK5oQjNNnw\""
+						},
+						{
+							"key": "Date",
+							"value": "Thu, 22 Feb 2024 21:11:12 GMT"
+						},
+						{
+							"key": "Connection",
+							"value": "keep-alive"
+						},
+						{
+							"key": "Keep-Alive",
+							"value": "timeout=5"
+						}
+					],
+					"cookie": [],
+					"body": "Text is required"
 				}
 			]
 		}
