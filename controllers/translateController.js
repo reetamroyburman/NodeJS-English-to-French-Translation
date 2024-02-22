@@ -11,7 +11,7 @@ const engToFrController = async (req, res) => {
         }
 
         const translation = await translatte(text, { to: 'fr' });
-        console.log(translation);
+        
         return res.status(200).json({ translation: translation.text });
 
     } catch (e) {
