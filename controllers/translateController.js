@@ -1,4 +1,5 @@
-const translatte = require('translatte');
+
+const { translate } = require('free-translate');
 
 
 const engToFrController = async (req, res) => {
@@ -9,9 +10,9 @@ const engToFrController = async (req, res) => {
             return res.status(400).send("Text is required");
         }
 
-        const translation = await translatte(text, { to: 'fr' });
+        const translation = await translate(text, { to: 'fr' });
 
-        return res.status(200).json({ translation: translation.text });
+        return res.status(200).json({ translation: translation });
 
     } catch (e) {
         console.error('Translation error:', e);
